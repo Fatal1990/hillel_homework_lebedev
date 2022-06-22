@@ -1,14 +1,12 @@
-import data from "./MOCK_DATA.json" assert {type: "json"};
+import {newArr} from "./map.js";
 
-const b = data;
+console.log(newArr);
 
 let insert = function () {
     const container = document.querySelector(".container");
 
-    for (let item of b) {
-        container.innerHTML += `<li>${item}</li>`;
-        console.log(item);
+    for (let item of newArr) {
+        container.innerHTML += `<div class="list-item">${item}</div>`;
     }
 }
-
 insert();
