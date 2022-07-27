@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  --gap: 16px;
+  --width-wr: 900px;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  margin: 16px 0 0;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap)/2);
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--gap)/2);
+}
+
+.delete-btn {
+  width: 30%;
+  min-height: 100%;
+
+  border: none;
+  cursor: pointer;
+
+  border-radius: 8px;
+  background: radial-gradient(circle, rgba(252,70,107,1) 0%, rgba(63,94,251,1) 36%);
+  
+  color: gold;
+  padding: 8px;
+  transition: all 0.5s ease;
+}
+
+.delete-btn:hover {
+  background: radial-gradient(circle, rgba(252,70,107,1) 22%, rgba(63,94,251,1) 100%);  color: #ffffff;
+}
+
+.App {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: lightgray;
+}
+
+.form__wrp {
+  max-width: var(--width-wr);
+  width: 100%;
+  min-height: 140px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+
+  border-radius: 8px;
+  padding: 32px;
+
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  text-align: center;
+
+  color: blueviolet;
+
+  margin: 0;
+}
+
+.form {
+  max-width: calc(var(--width-wr)/2);
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  gap: calc(var(--gap)/2);
+}
+
+.form > input {
+  width: 100%;
+
+  border-radius: 6px;
+  border: 1px solid grey;
+  outline: none;
+
+  padding: 8px;
+}
+
+.form > button {
+  width: 100%;
+  max-width: calc(var(--width-wr)/6);
+
+  border-radius: 6px;
+  border: none;
+
+  padding: 8px;
+}
+
+.form > button:hover {
+  color: white;
+  background-color: rgba(238, 255, 0, 0.705);
+  cursor: pointer;
+}
+
+.list-item {
+  width: 100%;
+  max-width: calc(var(--width-wr)/3);
+
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap);
+
+  cursor: pointer;
+  border-radius: 8px;
+
+  padding: 8px;
+}
+
+.done {
+  background-color: green;
+}
+
+.undone {
+  background-color: navajowhite;
+}
