@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+
+  background-color: rgb(255, 231, 200);
+}
+
+body {
+  width: 100%;
+  max-width: 1440px;
+
+  margin: 0 auto;
+  padding: 32px;
+}
+
+li {
+  list-style: none;
+}
+
+textarea {
+  width: 240px;
+  min-height: 250px;
+
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+  font-size: 16px;
+  letter-spacing: normal;
+  font-family: 'Roboto';
+
+  padding: 4px;
+  overflow: hidden;
+}
+
+.wrp {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 64px;
+
+  border: 2px solid blue;
+  background-color: rgb(230, 230, 230);
+
+  box-shadow: 10px 9px 29px 5px rgba(70, 70, 219, 0.55);
+  border-radius: 12px;
+
+  padding: 32px;
+}
+
+.add-btn-w {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.add-btn {
+  width: 100%;
+  max-width: 48px;
+
+  outline: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.add-btn > img {
+  width: 100%;
+  display: block;
+}
+
+@keyframes addRot {
+  from {
+    transform: rotateY(1deg)
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.add-btn:hover,
+.del-btn:hover {
+  animation: addRot 3s ease 0s infinite normal none;
+}
+
+.sticker-list {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.sticker-wrp {
+  width: 100%;
+  max-width: 300px;
+  min-height: 250px;
+
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  gap: 4px;
+
+  border-radius: 12px;
+  box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.75);
+  padding: 16px;
+}
+
+.sticker-wrp:nth-child(2n+1) {
+  background-color: rgba(243, 172, 234);
+}
+
+.sticker-wrp:nth-child(2n+2) {
+  background-color: rgb(141, 139, 243);
+}
+
+.sticker-wrp:nth-child(3n+3) {
+  background-color: rgb(187, 236, 146);
+}
+
+.del-btn-w {
+  display: flex;
+  justify-content: end;
+}
+
+.del-btn {
+  width: 24px;
+
+  background: none;
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+}
+
+.del-btn > img {
+  width: 100%;
+  display: block;
+}
+
+.sticker-wrp > p {
+  width: 100%;
+  padding: 4px;
+
+  cursor: pointer;
+  word-break: break-word;
+}
