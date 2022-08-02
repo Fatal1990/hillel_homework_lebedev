@@ -3,18 +3,17 @@ import React, { useState } from "react";
 export default function StickerItem({ sticker, deleteBtn, editDescription }) {
   const { id, description } = sticker;
   const [edit, setEdit] = useState(false);
-  const [editedDescription, setEditedDescription] = useState("");
+  const [currentDescription, setCurrentDescription] = useState(description);
 
   const editing = () => {
     return (
       <textarea
-        autoFocus={true}
         onBlur={(e) => {
           setEdit(!edit);
           e.stopPropagation();
-          editDescription(editedDescription, id);
+          setCurrentDescription(e.target.value);
+          editDescription(currentDescription);
         }}
-        onChange={(e) => setEditedDescription(e.target.value)}
       >
         {description}
       </textarea>
@@ -34,15 +33,15 @@ export default function StickerItem({ sticker, deleteBtn, editDescription }) {
   };
 
   return (
-    <li className='sticker-wrp'>
-      <div className='del-btn-w'>
+    <li className="sticker-wrp">
+      <div className="del-btn-w">
         <button
-          className='del-btn'
+          className="del-btn"
           onClick={() => {
             deleteBtn(id);
           }}
         >
-          <img src='./icon/delButtonIcon.svg' alt='' />
+          <img src="./icon/delButtonIcon.svg" alt="" />
         </button>
       </div>
       <>{edit ? editing() : state()}</>

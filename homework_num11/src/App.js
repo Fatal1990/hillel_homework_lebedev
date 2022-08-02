@@ -1,13 +1,13 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
 import StickerItem from "./components/StickerItem";
-// import useAsync from "./hooks/useAsync";
 
 function App() {
   const stickerArr = "https://62d7ce4f9c8b5185c77c706f.mockapi.io/Stickers";
-  const [description, setDescription] = useState("");
-  const [stickers, setStickers] = useState([]);
+
+  const [description, setDescription] = useState("Enter ur task...");
+  const [sticker, setSticker] = useState([]);
 
   const addBtn = (e) => {
     e.preventDefault();
@@ -16,39 +16,37 @@ function App() {
     };
     axios
       .post(stickerArr, newSticker)
-      .then(({ data }) => setStickers((prevSticker) => [...prevSticker, data]));
+      .then(({ data }) => setSticker((prevSticker) => [...prevSticker, data]));
   };
 
   const deleteBtn = (id) => {
     axios.delete(stickerArr + "/" + id);
-    const newStickerArr = stickers.filter((sticker) => sticker.id !== id);
-    setStickers(newStickerArr);
+    const newStickerArr = sticker.filter((sticker) => sticker.id !== id);
+    setSticker(newStickerArr);
   };
 
-  const editDescription = (description, id) => {
-    axios.put(stickerArr + "/" + id, { description });
-    const newDescription = stickers.find((sticker) => sticker.id === id);
-    newDescription.description = description;
+  const editDescription = () => {
+    
   };
 
   useEffect(() => {
-    axios.get(stickerArr).then(({ data }) => setStickers(data));
+    axios.get(stickerArr).then(({ data }) => setSticker(data));
   }, []);
 
   return (
-    <div className='wrp'>
-      <div className='add-btn-w'>
+    <div className="wrp">
+      <div className="add-btn-w">
         <button
           onClick={(e) => {
             addBtn(e);
           }}
-          className='add-btn'
+          className="add-btn"
         >
-          <img src='./icon/addButtonIcon.png' alt='' />
+          <img src="./icon/addButtonIcon.png" alt="" />
         </button>
       </div>
-      <ul className='sticker-list'>
-        {stickers.map((sticker) => (
+      <ul className="sticker-list">
+        {sticker.map((sticker) => (
           <StickerItem
             key={sticker.id}
             sticker={sticker}
