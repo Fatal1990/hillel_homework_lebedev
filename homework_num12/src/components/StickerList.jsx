@@ -32,6 +32,7 @@ export default function StickerList() {
 
   useEffect(() => {
     axios.get(stickerArr).then(({ data }) => setStickers(data));
+    // eslint-disable-next-line
   }, []);
 
   return (
