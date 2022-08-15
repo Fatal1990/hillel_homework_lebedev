@@ -29,13 +29,13 @@ export default function User() {
     setPhone(e.target.value);
   };
 
-  useEffect((id) => {
+  useEffect(() => {
     getUser(id).then((res) => {
       setFirstname(res.data.firstname);
       setLastname(res.data.lastname);
       setPhone(res.data.phone);
     });
-  }, []);
+  }, [id]);
 
   return (
     <UserForm
