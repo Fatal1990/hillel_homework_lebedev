@@ -1,0 +1,10 @@
+All components should be used from MUI library
+
+There should be such pages:
+/ - home page with a link to Users page
+/users - users page that displays all users in a table with Edit and Delete buttons
+/user/create - user create page with a form that allows to create a new user
+/user/:id - user update page with a form that allows to update existing user
+
+Forms should have Save and Cancel buttons. When they clicked - navigate 
+to /users page (Save should save changes also).
