@@ -29,7 +29,7 @@ export default function User() {
     setPhone(e.target.value);
   };
 
-  useEffect(() => {
+  useEffect((id) => {
     getUser(id).then((res) => {
       setFirstname(res.data.firstname);
       setLastname(res.data.lastname);
